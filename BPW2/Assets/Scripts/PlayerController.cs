@@ -63,13 +63,13 @@ public class PlayerController : MonoBehaviour
         {
             if (LeftArm.transform.localScale.x > 1f)
             {
-                LeftArm.transform.localScale -= new Vector3(0.2f, 0f, 0f);
+                LeftArm.transform.localScale -= new Vector3(0.4f, 0f, 0f);
             }
             else
             {
                 if ((!BLCheck || !rightCheck) && (!rightCheck || !leftCheck))
                 {
-                    RightArm.transform.localScale += new Vector3(0.2f, 0f, 0f);
+                    RightArm.transform.localScale += new Vector3(0.4f, 0f, 0f);
                 }
                 
             }
@@ -80,13 +80,13 @@ public class PlayerController : MonoBehaviour
         {
             if (RightArm.transform.localScale.x > 1f)
             {
-                RightArm.transform.localScale -= new Vector3(0.2f, 0f, 0f);
+                RightArm.transform.localScale -= new Vector3(0.4f, 0f, 0f);
             }
             else
             {
                 if ((!BRCheck || !leftCheck) && (!rightCheck || !leftCheck))
                 {
-                    LeftArm.transform.localScale += new Vector3(0.2f, 0f, 0f);
+                    LeftArm.transform.localScale += new Vector3(0.4f, 0f, 0f);
                 }
             }
         }
@@ -94,12 +94,12 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.S) && (!topCheck && !LTCheck && !RTCheck))
         {
-            BottomArm.transform.localScale += new Vector3(0f, 0.2f, 0f);
+            BottomArm.transform.localScale += new Vector3(0f, 0.4f, 0f);
         }
 
         if (Input.GetKey(KeyCode.W) && BottomArm.transform.localScale.y > 1.1f)
         {
-            BottomArm.transform.localScale -= new Vector3(0f, 0.2f, 0f);
+            BottomArm.transform.localScale -= new Vector3(0f, 0.4f, 0f);
         }
 
         if (Input.GetKey(KeyCode.Space) && !retracting && (RightArm.transform.localScale.x > 1.1 || LeftArm.transform.localScale.x > 1.1 || BottomArm.transform.localScale.y > 1.2))
@@ -117,19 +117,19 @@ public class PlayerController : MonoBehaviour
 
         while (RightArm.transform.localScale.x > 1f)
         {
-            RightArm.transform.localScale -= new Vector3(0.4f, 0f, 0f);
+            RightArm.transform.localScale -= new Vector3(0.8f, 0f, 0f);
             yield return null;
         }
 
         while (LeftArm.transform.localScale.x > 1f)
         {
-            LeftArm.transform.localScale -= new Vector3(0.4f, 0f, 0f);
+            LeftArm.transform.localScale -= new Vector3(0.8f, 0f, 0f);
             yield return null;
         }
 
         while (BottomArm.transform.localScale.y > 1.1f)
         {
-            BottomArm.transform.localScale -= new Vector3(0f, 0.6f, 0f);
+            BottomArm.transform.localScale -= new Vector3(0f, 1f, 0f);
             yield return null;
         }
 
